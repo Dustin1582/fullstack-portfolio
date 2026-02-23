@@ -7,8 +7,8 @@ export const AuthProvider = (props) => {
     const [accessToken, setAccessToken] = useState("");
     const [status, setStatus] = useState('loading'); // loading | authed | unauthed
     
-    const URL = import.meta.env.PROD ? "https://fullstack-portfolio-1-41oq.onrender.com"
-                                        : "http://localhost:5500";
+    const URL = import.meta.env.PROD ? "https://fullstack-portfolio-1-41oq.onrender.com" : "http://localhost:5500";
+      console.log("API URL:", URL, "MODE:", import.meta.env.MODE, "PROD:", import.meta.env.PROD);
     useEffect(() => {
         let isMounted = true
         const bootstrap = async () => {
