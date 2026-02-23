@@ -22,6 +22,7 @@ const corsOptions = require('./config/corsOptions');
 const Inventory = require('./models/inventory');
 
 const app = express();
+app.set("trust proxy", 1);
 const PORT = process.env.PORT || 5500;
 app.use(logger)
 app.use(cors(corsOptions))

@@ -39,12 +39,12 @@ const authUser = async (req, res) => {
         //storing in db
         foundUser.refreshToken = refreshToken
         await foundUser.save();
-
+        const isProduction = process.env.Node_ENV === "production"
         //sending token over httpOnly (js cant touch)
         res.cookie('jwt', refreshToken, {
             httpOnly: true,
-            secure: false,
-            sameSite: 'Strict',
+            secure: isProduction,
+            sameSite: isProduction ? 'None' : 'Strict',
             maxAge: 7 * 24 * 60 * 60 * 1000
         });
 
