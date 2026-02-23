@@ -1,0 +1,18 @@
+Feb48th2026	12:33:17	53f04729-76f4-4d1f-bbf9-99a359739890	TypeError: foundUser.save is not a function	POST	/logout
+Feb48th2026	12:37:06	e1e1f988-a0cf-4d2f-a002-3c178b8ec089	TypeError: foundUser.save is not a function	POST	/logout
+Feb50th2026	08:00:01	08b5805f-c23f-4417-bfaf-1736502f74b5	Error: Cannot set headers after they are sent to the client	GET	/issue-report
+Feb50th2026	08:00:01	ce78daf6-27c7-4827-82e8-a1b618b80041	Error: Cannot set headers after they are sent to the client	GET	/issue-report
+Feb50th2026	08:00:01	fe2f5999-c112-4f77-89da-1a4ec615aa37	Error: Cannot set headers after they are sent to the client	GET	/issue-report
+Feb50th2026	08:00:01	45579d27-134b-4bf7-89de-6520e205432e	Error: Cannot set headers after they are sent to the client	GET	/issue-report
+Feb50th2026	08:03:28	cfdfb71d-2114-45a4-9cd1-395c70e2e470	Error: Cannot set headers after they are sent to the client	GET	/issue-report
+Feb50th2026	08:03:28	7dac9c79-9a70-4b6a-bf19-0d7054c6bec2	Error: Cannot set headers after they are sent to the client	GET	/issue-report
+Feb50th2026	08:03:28	8718a64a-ad4f-44dd-a3fc-97fe10470d53	Error: Cannot set headers after they are sent to the client	GET	/issue-report
+Feb50th2026	08:03:28	0e2f7e13-69b0-434b-a71e-6aa0939ffa2f	Error: Cannot set headers after they are sent to the client	GET	/issue-report
+Feb50th2026	08:06:57	4c6d13c7-d5ca-4d0f-b7f4-b8d8028de0f0	Error: Cannot set headers after they are sent to the client	GET	/issue-report
+Feb50th2026	08:06:57	c31e3b32-0008-4170-a76c-8a1f289cb356	Error: Cannot set headers after they are sent to the client	GET	/issue-report
+Feb50th2026	08:06:57	6b12bd0d-d5e9-4664-a88a-0be98344acd1	Error: Cannot set headers after they are sent to the client	GET	/issue-report
+Feb50th2026	08:06:57	4392e858-6e76-407f-855e-902025409369	Error: Cannot set headers after they are sent to the client	GET	/issue-report
+Feb50th2026	08:42:49	123d2902-911b-49c7-b8a9-6ec7904d439c	Error: Cannot set headers after they are sent to the client	GET	/issue-report
+Feb50th2026	08:42:49	0c389cb9-0daf-4716-9c34-51a83b254061	Error: Cannot set headers after they are sent to the client	GET	/issue-report
+Feb50th2026	08:42:49	e9c1d99e-2e0c-475c-819b-a6a1b2f3a9ed	Error: Cannot set headers after they are sent to the client	GET	/issue-report
+Feb50th2026	08:42:49	2ad45e4d-2444-4f9d-a648-ca224be6dec6	Error: Cannot set headers after they are sent to the client	GET	/issue-report

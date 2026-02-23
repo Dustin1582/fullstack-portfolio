@@ -1,0 +1,124 @@
+
+:root {
+  color-scheme: light;
+  --bg: #ffffff;
+  --text: #111827;
+
+  --sidebar-bg: #3B82F6;
+  --active-sidebar-bg: #ffffff;
+
+  --header-bg: #4F93EA;
+  --header-inside-bg: #3B82F6;
+
+  --on-hover: rgb(53, 77, 99);
+  
+  --input-bg: #E0E0E0;
+  --input-bd-color: rgba(0, 0, 0, 0.4) ;
+  
+  --card: #f6f6f7;
+  --border: rgba(0, 0, 0, 0.08);
+  
+  --link: #2563eb;
+  --link-hover: #1d4ed8;
+  
+  --button-bg: #90bdf3;
+  --button-text: #111827;
+
+  --outter-bg: #475569;
+  
+  font-family: "Google Sans", system-ui, sans-serif;
+}
+
+
+
+#root {
+    min-height: 100vh;
+    display: flex; 
+    flex-direction: column;
+    background-color: var(--outter-bg);
+
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background: var(--outter-bg);
+  color: var(--text);
+}
+
+a {
+  color: var(--link);
+}
+
+a:hover {
+  color: var(--link-hover);
+}
+
+button {
+  background: var(--button-bg);
+  color: var(--button-text);
+}
+
+.card {
+  background: var(--card);
+  color: var(--text);
+  border-radius: 16px;
+  
+  border: 1px solid var(--border);
+  box-shadow:
+  0 18px 50px rgba(0, 0, 0, 0.70),
+  0 6px 14px rgba(0, 0, 0, 0.55);
+  
+}
+
+.card-light {
+  background: var(--card);
+  color: var(--text);
+  border-radius: 16px;
+
+  box-shadow: 
+      rgba(50, 50, 93, 0.25) 0px 13px 27px -5px,
+      rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+}
+
+.footer {
+  background: var(--header-bg);
+}
+
+.content {
+  flex: 1;
+  display: flex;
+}
+
+/* Chrome, Edge, Safari */
+::-webkit-scrollbar {
+  width: 12px;
+  height: 12px;
+}
+
+::-webkit-scrollbar-button:single-button {
+  display: none;
+  height: 0;
+  width: 0;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(17, 24, 39, 0.25);
+  border-radius: 999px;
+  border: 3px solid var(--bg);
+  /* creates padding around thumb */
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(17, 24, 39, 0.40);
+}
+
+/* Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(17, 24, 39, 0.35) var(--bg);
+}

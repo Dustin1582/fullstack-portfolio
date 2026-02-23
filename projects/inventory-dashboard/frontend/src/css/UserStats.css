@@ -1,0 +1,105 @@
+.user-mr-container {
+    height: 100%;
+}
+
+.user-inner-mrc {
+    height: 21rem;
+    width: 20rem;
+    border: 1px solid rgb(245, 245, 245);
+    border-radius: 8px;
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 3px 8px;
+    overflow: hidden;
+}
+
+.umr-h {
+    background-color: rgb(245, 245, 245);
+}
+
+.umr-h > h5 {
+    margin: 0;
+    padding: 0.5rem 0 0.5rem 1rem;
+}
+
+.user-header-tabs {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    margin: 0.5rem 0;
+}
+
+.user-header-tabs > .user-tab > .user-tab-img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 42px;
+    width: 42px;
+    border: 1px solid rgb(245, 245, 245);
+    border-radius: 50%;
+}
+
+.user-header-tabs > .user-tab > .user-tab-img > img {
+    height: 28px;
+    width: 28px;
+}
+
+.user-tab {
+    display: flex;
+    gap: 0.75rem;
+    justify-content: center;
+    align-items: center;
+    width: 8rem;
+    height: 4rem;
+    border: 1px solid rgb(245, 245, 245);
+    border-radius: 8px;
+    width: 8rem;
+}
+
+.user-tab.Total {
+    background-color: rgb(235, 235, 235);
+}
+
+.user-tab.Most {
+    background-color: rgb(255, 235, 198);
+}
+
+.user-name-total {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+}
+ 
+.user-tab-total > p, .user-tab-name > p {
+    margin: 0;
+    font-size: 11px;
+}
+
+.user-tab-total > p {
+    font-weight: bold;
+}
+
+.users-table {
+    width: 90%;
+    border: 1px solid rgb(245, 245, 245);
+    border-radius: 8px;
+    margin: 0 auto;
+    border-collapse: collapse;
+    overflow: hidden;
+}
+
+.us-header {
+    margin: 2rem 0 0.5rem 2rem;
+}
+
+.utr {
+    background-color: rgb(235, 235, 235);
+}
+
+.utr > .utr-name, .utr > .utr-order {
+    font-weight: bold;
+    font-size: 15px;
+    text-align: center;
+}
+.utbr > * {
+    text-align: center !important;
+}

@@ -1,0 +1,12 @@
+.credit-c {
+    padding: 2rem;
+}
+
+.credit-header > h2 {
+    margin: 0;
+    padding: 0;
+}
+
+.credit-header > p {
+    padding: 0;
+}

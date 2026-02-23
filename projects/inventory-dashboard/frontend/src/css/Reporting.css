@@ -1,0 +1,43 @@
+.reporting-container {
+    padding: 3rem;
+    height: 80%;
+}
+
+
+.top-row {
+ display: flex;
+ height: 100%;
+ justify-content: center;
+ align-items: center;
+ gap: 5rem;   
+}
+
+.purchase-stats {
+    min-width: 30rem;
+    max-width: 40rem;
+}
+
+.users-table {
+    max-width: 20rem;
+    margin-top: -1rem;
+}
+.utr > td {
+    border: none;
+    text-align: center;
+}
+
+.utbr > td:last-child {
+    text-align: end;
+}
+
+.utr {
+    border: 1px solid var(--border);
+}
+
+.utbr {
+    border: 1px solid var(--border);
+}
+
+.utbr > td {
+    border: none;
+}

@@ -1,0 +1,210 @@
+
+/* Main Page Grid*/
+.dash {
+    display: grid;
+    gap: 2rem;
+
+    grid-template-columns: 1fr 3fr 1.5fr;
+    
+    grid-template-rows: 
+        1fr 1.5fr 2fr
+    ;
+    grid-template-areas:
+        "overview overview overview"
+        "users pie top10"
+        "line line top10"
+    ;
+
+    padding: 4rem;
+}
+
+.overview {
+    grid-area: overview;
+    border: 1px solid pink;
+}
+.users {grid-area: users;
+
+}
+.pie { grid-area: pie;
+
+}
+.top10 { grid-area: top10;
+
+}
+.line { grid-area: line;
+
+}
+
+@media (max-width: 900px) {
+    .dash {
+        grid-template-columns: 1fr;
+        grid-template-areas:
+            "overview"
+            "users"
+            "pie"
+            "top10"
+            "line";
+    }
+}
+
+.overview > h3 {
+    margin: 0 0 1rem 3.5rem;
+    font-weight: lighter;
+}
+
+
+/* Inside overview grid*/
+.overview-grid {
+    display: grid;
+    gap: 7rem;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    grid-template-areas:
+        "Total Orders Purchasing Out"
+    ;
+
+    padding: 0 0.5rem;
+    margin: 0 2rem;
+}
+
+.Total {grid-area: Total;}
+.Orders {grid-area: Orders;}
+.Purchasing {grid-area: Purchasing;}
+.Out {grid-area: Out;}
+
+.Orders .number p, .Orders .name p {
+    margin-left: 0.75rem;
+}
+.Purchasing .number p, .Purchasing .name p {
+    margin-left: 0.75rem;
+}
+
+
+/*Inside the mini cards*/
+.mini {
+    display: grid;
+    background: var(--header-bg);
+    grid-template-columns: 1fr 2fr;
+    grid-template-rows: 1fr;
+
+    grid-template-areas:
+        "box number"
+        "box name"
+    ;
+    gap: 0.5rem;
+    min-height: 4rem;
+    min-width: 8rem;
+    border: 2px solid var(--border);
+    padding: 0.25rem;
+    border-radius: 18px;
+}
+
+.box {
+    grid-area: box;
+    display: flex;
+    background: var(--button-bg);
+    justify-content: center;
+    align-items: center;
+    min-height: 2.5rem;
+    max-height: 3rem;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 14px;
+    padding: 0 0.25rem;
+    margin: auto 0;
+}
+
+.inside-mini > img {
+    width: 32px;
+}
+
+.name > p {
+    margin-top: -0.5rem;
+    font-size: 10px;
+    white-space: normal;
+    overflow-wrap: anywhere;
+    margin-top: -0.5rem;  
+}
+.number {
+    grid-area: number;
+    margin-bottom: -0.55rem;
+}
+
+.number > p {
+    margin-top: 1rem !important;
+    font-size: 13px;
+}
+
+.name {
+    grid-area: name;
+}
+
+
+
+/* Total Users Box */
+.users {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.user-container {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    grid-template-areas: 
+        "title title"
+        "icon amount"
+        "text text"
+    ;
+
+}
+
+.title { 
+    grid-area: title;
+}
+
+
+.icon { 
+    grid-area: icon;
+    min-height: 3.5rem;
+    min-width: 3.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid var(--border);
+    background: var(--header-bg);
+
+    border-radius: 15px;
+}
+.amount {
+    grid-area: amount;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.amount > p {
+    margin-left: 0.5rem;
+}
+
+.text {
+    grid-area: text;
+    margin-top: 0;
+}
+
+.text > h4 {
+    margin-top: 0.75rem;
+    font-weight: lighter;
+    letter-spacing: 2px;
+}
+
+.title > .users-total-text {
+    margin-bottom: 0.75rem;
+    padding: 0;
+}
+/* users */
+.icon > img {
+    width: 30px;
+    height: 42px;
+}

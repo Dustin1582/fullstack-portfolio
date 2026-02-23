@@ -1,0 +1,174 @@
+.main-support-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 90%;
+
+    
+}
+
+.form {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 3px 8px;
+}
+
+
+.main-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    width: 35rem;
+    padding: 2rem;
+}
+
+
+.report-header-container > h4 {
+    margin: 0;
+    background: rgb(235, 235, 235);
+    padding: 1rem 0 1rem 1rem;
+
+}
+
+.email > input {
+    width: 19.6rem;
+    height: 2.2rem;
+    border-radius: 10px;
+    border: 1px solid var(--input-bd-color);
+    padding-left: 0.5rem;
+}
+
+.m-dd-c {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.dd-top {
+    display: flex;
+    align-items: center;
+    background: rgb(235, 235, 235);;
+    width: 20rem;
+    height: 2.5rem;
+    border-radius: 10px;
+    cursor: pointer;
+    transform: scale(1);
+    transition: transform 0.05s ease;
+}
+
+.dd-top > p {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    padding: 0%;
+}
+
+
+
+.m-dd-c >  #mdd {
+    width: 15rem;
+    padding: 10px 5px;
+    border-radius: 10px;
+}
+
+.dd-bottom {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: white;
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    width: 20rem;
+    top: 3rem;
+    overflow: hidden;
+}
+
+.issue-value {
+    color: black;
+    width: 100%;
+    text-align: center;
+    margin: 0;
+    padding: 0.5rem 0;
+}
+
+.issue-value:hover {
+    color: black;
+    background: rgb(235, 235, 235);
+    cursor: pointer;
+}
+
+.response-container {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+}
+
+#response {
+    resize: none;
+    padding: 0.5rem;
+}
+
+.button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgb(235, 235, 235);
+    font-weight: bold;
+    width: 10rem;
+    height: 2.5rem;
+    border: 1px solid rgba(0, 0, 0, 0.3);
+    border-radius: 8px;
+    text-align: center;
+    transform: scale(1);
+    transition: transform 0.04s ease;
+    cursor: pointer;
+}
+
+.button:hover{
+    transform: scale(1.02);
+}
+
+.button:active {
+    transform: scale(0.99);
+}
+
+.button > p {
+    margin: 0%;
+}
+
+.success {
+    position: absolute;
+    bottom: 9rem;
+    right: 38%;
+    transform: translateY(1rem);
+    opacity: 0;
+    color: rgb(1, 190, 1);
+    font-weight: 900;
+    transition: transform 0.2s ease, opacity 0.09s ease;
+}
+
+.success.active {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+
+.arrow {
+    height: 28px;
+    width: 28px;
+    transform: rotate(0);
+    transition: transform 0.05s ease-in-out;
+}
+
+.arrow.up {
+    transform: rotate(180deg);
+}
+

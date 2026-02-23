@@ -1,0 +1,9 @@
+.main-hic {
+    display: flex;
+    background: linear-gradient(to right, var(--header-inside-bg) 40%, var(--bg) 98%);
+}
+
+.main-hic > h1 {
+    margin: 0.7rem 0 0.7rem 2.5rem;
+    font-weight: lighter;
+}
