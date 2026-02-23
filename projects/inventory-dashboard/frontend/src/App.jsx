@@ -13,7 +13,8 @@ import { useAuth } from "./context/AuthContext";
 
 function App() {
   const { setAccessToken } = useAuth();
-  const URL = 'http://localhost:5500'
+      const URL = import.meta.env.PROD ? "https://fullstack-portfolio-1-41oq.onrender.com"
+                                        : "http://localhost:5500";
   // login in state
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
