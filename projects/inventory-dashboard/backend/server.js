@@ -22,7 +22,7 @@ const corsOptions = require('./config/corsOptions');
 const Inventory = require('./models/inventory');
 
 const app = express();
-const PORT = 5500;
+const PORT = process.env.PORT || 5500;
 app.use(logger)
 app.use(cors(corsOptions))
 app.options(/.*/, cors(corsOptions))
