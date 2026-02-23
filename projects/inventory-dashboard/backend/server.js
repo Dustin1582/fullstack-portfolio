@@ -24,18 +24,16 @@ const Inventory = require('./models/inventory');
 const app = express();
 app.set("trust proxy", 1);
 const PORT = process.env.PORT || 5500;
+
+
 app.use(logger)
 app.use(cors(corsOptions))
 app.options(/.*/, cors(corsOptions))
-// middleware to parse the json
 app.use(express.json());
 app.use(cookieParser())
-mongoose.connect(process.env.MONGO_URI);
 
-mongoose.connection.once('open', async () => {
-    console.log('Connected to MongoDb');
-    await Inventory.syncIndexes();
-    console.log('Inventory indexes synced');
+app.get('/health', (req, res) => {
+  res.status(200).json({ status: 'ok' });
 });
 
 //Testing the route
@@ -65,6 +63,55 @@ app.get('/protected', (req, res) => {
 
 app.use(errorHandler);
 
-app.listen(PORT, () => {
-    console.log(`server is listening on Port: ${PORT}`)
+mongoose.connection.on('connected', () => {
+  console.log('Mongo connected');
 });
+
+mongoose.connection.on('disconnected', () => {
+  console.warn('Mongo disconnected');
+});
+
+mongoose.connection.on('error', (err) => {
+  console.error('Mongo connection error:', err);
+});
+
+process.on('unhandledRejection', (reason) => {
+  console.error('Unhandled Rejection:', reason);
+});
+
+process.on('uncaughtException', (err) => {
+  console.error('Uncaught Exception:', err);
+});
+
+
+async function startServer() {
+  try {
+    if (!process.env.MONGO_URI) {
+      throw new Error('MONGO_URI is missing from environment variables');
+    }
+
+    await mongoose.connect(process.env.MONGO_URI, {
+      serverSelectionTimeoutMS: 10000
+    });
+
+    console.log('Connected to MongoDb');
+
+    // Sync indexes safely (won’t crash the process if it fails)
+    try {
+      await Inventory.syncIndexes();
+      console.log('Inventory indexes synced');
+    } catch (indexError) {
+      console.error('Inventory syncIndexes failed:', indexError);
+    }
+
+    app.listen(PORT, () => {
+      console.log(`server is listening on Port: ${PORT}`);
+    });
+  } catch (err) {
+    console.error('Failed to start server:', err);
+    // ✅ CHANGED: exit so Render restarts, but with a clear reason
+    process.exit(1);
+  }
+}
+
+startServer();
