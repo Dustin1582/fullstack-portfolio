@@ -3,17 +3,15 @@ import '../css/loginPage.css'
 import { useAuth } from "../context/AuthContext"
 import { useEffect, useRef, useState } from "react"
 
-const Login = ({username, password, setUsername, setPassword, handleLogin, setCurrentUser}) => {
+const Login = ({username, password, setUsername, setPassword, handleLogin, setCurrentUser, isLoading}) => {
   const location = useLocation();
   const shouldAnimateOpen = Boolean(location.state && location.state.animateOpen);
   const navigate = useNavigate()
   const { accessToken, setStatus } = useAuth()
 
   const [isOpen, setIsOpen] = useState(false)
-
-
-
   const navigatedOnce = useRef(false); 
+
 
   useEffect(() => {
     if(!shouldAnimateOpen) return;
@@ -68,6 +66,7 @@ const Login = ({username, password, setUsername, setPassword, handleLogin, setCu
 
   return (
     <div className={`login-open-shell ${shouldAnimateOpen && isOpen ? "open" : ""}`}>
+      <div className={`progress-indecator ${isLoading ? "loading" : ""}`} ></div>
       <div className="login-container">
           <div className="card-light">
               <h1>Login</h1>

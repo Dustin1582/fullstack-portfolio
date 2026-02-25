@@ -22,11 +22,36 @@
 }
 
 .login-container {
+    position: relative;
     flex: 1;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+}
+
+.progress-indecator {
+    position: absolute;
+    inset: 0;
+
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+}
+
+.progress-indecator.loading {
+    border: 6px solid rgba(255, 255, 255, 0.25);
+    border-top-color: rgba(255, 255, 255, 0.95);
+    animation: spinner 0.9s linear infinite;
+}
+
+@keyframes spinner {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
 }
 
 .card, .card-light {

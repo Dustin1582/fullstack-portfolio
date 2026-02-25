@@ -14,12 +14,11 @@ function InventoryApp() {
   const { setAccessToken } = useAuth();
   const URL = import.meta.env.PROD ? "https://fullstack-portfolio-1-41oq.onrender.com" : "http://localhost:5500";
   
-
-
   // login in state
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [currentUser, setCurrentUser] = useState({userId: "", username: "", role: ""});
+  const [isLoading, setIsLoading] = useState(false); 
   //register state
   const [registerUser, setRegisterUser] = useState('')
   const [registerPass, setRegisterPass] = useState('')
@@ -46,6 +45,7 @@ function InventoryApp() {
       role: payload.role
     });
   }
+
 
   async function tryRefreshLogin() {
   try {
@@ -78,6 +78,7 @@ function InventoryApp() {
   }
 }
 
+
   useEffect(() => {
   if (ranOnce.current) {
     return;
@@ -87,8 +88,11 @@ function InventoryApp() {
   tryRefreshLogin();
   }, []);
 
+
+
   const handleLogin = async (e) => {
     e.preventDefault()
+    setIsLoading(true)
     try {
       const response = await fetch(`${URL}/auth`, {
         method: 'POST',
@@ -111,6 +115,8 @@ function InventoryApp() {
     } catch (error) {
       console.error(error.message)
       return false
+    } finally {
+        setIsLoading(false);
     }
   }
 
@@ -154,6 +160,7 @@ function InventoryApp() {
           setPassword={setPassword} 
           handleLogin={handleLogin} 
           setCurrentUser={setCurrentUser}
+          isLoading={isLoading}
           />
         }>
         </Route>
