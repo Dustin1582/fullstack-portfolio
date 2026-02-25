@@ -1,15 +1,15 @@
 export const inventoryItems = [
   // Apparel
-  { name: "Blue Collard-Shirt (S)", category: "Apparel", priceCents: 1299 , img: '/purchasing/shirt.png', stock: 32},
-  { name: "Blue Collard-Shirt (M)", category: "Apparel", priceCents: 1299 , img: '/purchasing/shirt.png', stock: 32},
-  { name: "Blue Collard-Shirt (L)", category: "Apparel", priceCents: 1299 , img: '/purchasing/shirt.png', stock: 32},
-  { name: "Black Hoodie (M)", category: "Apparel", priceCents: 3499 , img: '/purchasing/hoodie.png', stock: 32},
-  { name: "Black Hoodie (L)", category: "Apparel", priceCents: 3499 , img: '/purchasing/hoodie.png', stock: 32},
-  { name: "Grey Sweatpants (M)", category: "Apparel", priceCents: 2999 , img: '/purchasing/sweatpants.png', stock: 32},
-  { name: "Grey Sweatpants (L)", category: "Apparel", priceCents: 2999 , img: '/purchasing/sweatpants.png', stock: 32},
-  { name: "Baseball Cap", category: "Apparel", priceCents: 1899 , img: '/purchasing/cap.png', stock: 32},
-  { name: "Beanie Hat", category: "Apparel", priceCents: 1599 , img: '/purchasing/beanie.png', stock: 32},
-  { name: "Leather Belt", category: "Apparel", priceCents: 2499 , img: '/purchasing/belt.png', stock: 32},
+  { name: "Blue Collard-Shirt (S)", category: "Apparel", priceCents: 1299 , img: `${import.meta.env.BASE_URL}/purchasing/shirt.png`, stock: 32},
+  { name: "Blue Collard-Shirt (M)", category: "Apparel", priceCents: 1299 , img: `${import.meta.env.BASE_URL}/purchasing/shirt.png`, stock: 32},
+  { name: "Blue Collard-Shirt (L)", category: "Apparel", priceCents: 1299 , img: `${import.meta.env.BASE_URL}/purchasing/shirt.png`, stock: 32},
+  { name: "Black Hoodie (M)", category: "Apparel", priceCents: 3499 , img: `${import.meta.env.BASE_URL}/purchasing/hoodie.png`, stock: 32},
+  { name: "Black Hoodie (L)", category: "Apparel", priceCents: 3499 , img: `${import.meta.env.BASE_URL}/purchasing/hoodie.png`, stock: 32},
+  { name: "Grey Sweatpants (M)", category: "Apparel", priceCents: 2999 , img: `${import.meta.env.BASE_URL}/purchasing/sweatpants.png`, stock: 32},
+  { name: "Grey Sweatpants (L)", category: "Apparel", priceCents: 2999 , img: '${import.meta.env.BASE_URL}/purchasing/sweatpants.png', stock: 32},
+  { name: "Baseball Cap", category: "Apparel", priceCents: 1899 , img: `${import.meta.env.BASE_URL}/purchasing/cap.png`, stock: 32},
+  { name: "Beanie Hat", category: "Apparel", priceCents: 1599 , img: `${import.meta.env.BASE_URL}/purchasing/beanie.png`, stock: 32},
+  { name: "Leather Belt", category: "Apparel", priceCents: 2499 , img: `${import.meta.env.BASE_URL}/purchasing/belt.png`, stock: 32},
 ];
 
 

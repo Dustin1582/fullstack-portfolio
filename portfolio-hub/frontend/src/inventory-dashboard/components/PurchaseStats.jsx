@@ -34,31 +34,6 @@ const PurchaseStats = ({confirmedOrder, setTotalOrder}) => {
         }, 0)
     })
 
-    // const topSupplierThisMonth = useMemo(() => {
-    //     const supplier = filteredOrderData.map(item => item.supplier);
-
-    //     const supplierCount = supplier.reduce((obj, name) => {
-    //         const currentCount = obj[name] || 0 //how many times the name appears
-    //         const next = currentCount + 1;
-
-    //         obj[name] = next;
-    //         return obj
-    //     }, {});
-
-    //     let topSupplier = ""
-    //     let topCount = 0;
-
-    //     for(const name in supplierCount) {
-    //         const count = supplierCount[name];
-
-    //         if(count > topCount) {
-    //             topSupplier = name;
-    //             topCount = count;
-    //         }
-    //     }
-    //     return {supplier: topSupplier, count: topCount}
-    // });
-
 
     const supplierTotal = useMemo(() => {
        const totalsSoFarWTax = filteredOrderData.reduce((totals, order) => {

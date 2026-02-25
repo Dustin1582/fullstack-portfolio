@@ -3,7 +3,7 @@ import { useAuth } from "../context/AuthContext"
 import fetchWithAuth from "../helpers/Authorization"
 import "../css/Sidebar.css"
 
-const SideBar = ({currentUser, active, setActive, darkTheme, fullProfile}) => {
+const SideBar = ({currentUser, active, setActive, fullProfile}) => {
     const { accessToken, setAccessToken, URL, setStatus } = useAuth()
     const navigate = useNavigate();
     
@@ -74,21 +74,7 @@ const SideBar = ({currentUser, active, setActive, darkTheme, fullProfile}) => {
                     </div>
                 </div>
                 <nav>
-                    {darkTheme && navOptionsWhite.map((item) => (
-                        <div 
-                            className={`button-container ${active === item.label ? "active" : "" }`}
-                            key={item.label}
-                            onClick={() => setActive(item.label)}
-                        >
-                            <span className={`inner-button-container ${active === item.label ? "inner-active" : "" }`}>
-                                <img src={item.icons} alt={item.label} className='svg'/>
-                                <p className='label'>{item.label}</p>
-                                
-                            </span>
-                        </div>
-                    ))}
-
-                    {!darkTheme && navOptionsBlack.map((item) => (
+                    {navOptionsBlack.map((item) => (
                             <div className={`button-container ${active === item.label ? "active" : "" }`} 
                                 key={item.label}
                                 onClick={() => setActive(item.label)}

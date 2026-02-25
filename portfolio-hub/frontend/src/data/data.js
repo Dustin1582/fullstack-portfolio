@@ -1,7 +1,7 @@
 export const projects = [
     {
         name: "Inventory Manager", 
-        icon: "/In.ico", 
+        icon: `${import.meta.env.BASE_URL}/In.ico`, 
         createdWith: [
             {name: "React", color: "#aee8fca6", darkColor: "#0B3D59"},
             {name: "Express", color: "#ffe08aad", darkColor: "#4A2F00"}, 
