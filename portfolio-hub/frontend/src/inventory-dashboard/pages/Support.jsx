@@ -139,7 +139,7 @@ const Support = ({currentUser, setConfirmIssue}) => {
                         onClick={() => setIsActive(!active)}
                     >
                         <p>{dropdownValue}</p>
-                        <img className={`arrow ${active ? "up" : ""}`}  src="/arrows/down-arrow.svg" alt="dropdown arrow" /> 
+                        <img className={`arrow ${active ? "up" : ""}`}  src={`${import.meta.env.BASE_URL}/arrows/down-arrow.svg`} alt="dropdown arrow" /> 
                                 
                     </div>
                     {err && errType === "dropdown" && <p style={{color: "red", margin:"0 0 0 1rem"}}>{err}</p>}

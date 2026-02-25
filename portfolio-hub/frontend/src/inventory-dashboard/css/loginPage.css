@@ -1,3 +1,26 @@
+.login-open-shell {
+    position: fixed;
+    inset: 0; z-index: 9999;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    transform: scale(0.2);
+    opacity: 0;
+
+    transform-origin: center;
+    transition: transform 0.082s ease-out, opacity 0.022s ease-out;
+
+    background: rgba(0, 0, 0, 0.18);
+    backdrop-filter: blur(8px);
+}
+
+.login-open-shell.open {
+    transform: scale(1);
+    opacity: 1;
+}
+
 .login-container {
     flex: 1;
     display: flex;
@@ -50,4 +73,12 @@
 
 input {
     width: 20rem;
+}
+
+.login-link {
+    margin-bottom: 0;
+}
+
+.login-link.hub {
+    margin-top: 0.25rem;
 }

@@ -12,7 +12,7 @@ import Credits from '../pages/Credits'
 import Admin from './Admin'
 
 
-const Home = ({currentUser, registerUser, darkTheme}) => {
+const Home = ({currentUser, registerUser}) => {
   
   const { accessToken, setAccessToken, URL } = useAuth();
   
@@ -81,7 +81,6 @@ const Home = ({currentUser, registerUser, darkTheme}) => {
           setConfirmedOrder={setConfirmedOrder}
           order={order}
           setOrder={setOrder}
-          darkTheme={darkTheme}
          />
       case "Reporting":
         return <Reporting 
@@ -106,7 +105,7 @@ const Home = ({currentUser, registerUser, darkTheme}) => {
   return (
     <main className='home-main'>
       <div className="sidebar">
-        <SideBar currentUser={currentUser} active={active} setActive={setActive} darkTheme={darkTheme} fullProfile={fullProfile}/>
+        <SideBar currentUser={currentUser} active={active} setActive={setActive} fullProfile={fullProfile}/>
       </div>
       <div className="home-content">
         {content(active)}

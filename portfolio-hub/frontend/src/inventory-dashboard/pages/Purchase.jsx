@@ -4,7 +4,7 @@ import SelectInventory from "../components/SelectInventory";
 import Cart from "../components/Cart";
 import "../css/Purchase.css"
 
-const Purchase = ({currentUser, setConfirmedOrder, order, setOrder, darkTheme}) => {
+const Purchase = ({currentUser, setConfirmedOrder, order, setOrder}) => {
     const dropdownRef = useRef();
     const [isOpen, setIsOpen] = useState(false);
     const [selectedItem, setSelectedItem] = useState("");
@@ -83,7 +83,7 @@ const Purchase = ({currentUser, setConfirmedOrder, order, setOrder, darkTheme}) 
                 setSupplier={setSupplier} handleQtyChange={handleQtyChange} supplier={supplier}
                 qty={qty} selectedItem={selectedItem} current={current} dropdownRef={dropdownRef}
                 isOpen={isOpen} total={total} date={date} setDate={setDate} order={order} setOrder={setOrder}
-                darkTheme={darkTheme}
+
             />
         </section>
         <section className='purchase-cart'>
@@ -95,7 +95,7 @@ const Purchase = ({currentUser, setConfirmedOrder, order, setOrder, darkTheme}) 
                 supplier={supplier}
                 setSupplier={setSupplier}
                 setIsLoading={setIsLoading}
-                darkTheme={darkTheme}
+
             />
         </section>
     </div>

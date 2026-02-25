@@ -8,18 +8,18 @@ const SideBar = ({currentUser, active, setActive, fullProfile}) => {
     const navigate = useNavigate();
     
     const navOptionsBlack = [
-        {label: "Inventory", icons: "/svg-home/inventory-black.svg"},
-        {label: "Purchase", icons: "/svg-home/cart-black.svg"}, 
-        {label: "Reporting", icons: "/svg-home/reporting-black.svg"}, 
-        {label: "Support", icons: "/svg-home/support-black.svg"},
-        {label: "Credits", icons: "/svg-home/medal-black.svg"},
+        {label: "Inventory", icons: `${import.meta.env.BASE_URL}/svg-home/inventory-black.svg`},
+        {label: "Purchase", icons: `${import.meta.env.BASE_URL}/svg-home/cart-black.svg`}, 
+        {label: "Reporting", icons: `${import.meta.env.BASE_URL}/svg-home/reporting-black.svg`}, 
+        {label: "Support", icons: `${import.meta.env.BASE_URL}/svg-home/support-black.svg`},
+        {label: "Credits", icons: `${import.meta.env.BASE_URL}/svg-home/medal-black.svg`},
     ]
     const navOptionsWhite = [
-        {label: "Inventory", icons: "/svg-home/inventory-white.svg"},
-        {label: "Purchase", icons: "/svg-home/cart-white.svg"}, 
-        {label: "Reporting", icons: "/svg-home/reporting-white.svg"}, 
-        {label: "Support", icons: "/svg-home/support-white.svg"},
-        {label: "Credits", icons: "/svg-home/medal-white.svg"},
+        {label: "Inventory", icons: `${import.meta.env.BASE_URL}/svg-home/inventory-white.svg`},
+        {label: "Purchase", icons: `${import.meta.env.BASE_URL}/svg-home/cart-white.svg`}, 
+        {label: "Reporting", icons: `${import.meta.env.BASE_URL}/svg-home/reporting-white.svg`}, 
+        {label: "Support", icons: `${import.meta.env.BASE_URL}/svg-home/support-white.svg`},
+        {label: "Credits", icons: `${import.meta.env.BASE_URL}/svg-home/medal-white.svg`},
     ]
     
     const logout = async () => {
@@ -52,7 +52,7 @@ const SideBar = ({currentUser, active, setActive, fullProfile}) => {
             setAccessToken(""); // important, clear local auth
             await logout();     // wait for server cookie clear
         } finally {
-            navigate("/login", { replace: true });
+            navigate("login", { replace: true });
         }
     };
 
@@ -67,7 +67,7 @@ const SideBar = ({currentUser, active, setActive, fullProfile}) => {
         <div className='sidebar-container'>
             <div className="top-c">
                 <div className="profile-pic">
-                    <div className={`${darkTheme ? 'outter-circle-light': 'outter-circle-dark'}`}>
+                    <div className='outter-circle-dark'>
                         <div className="inner-circle">
                             <h1>{firstInit}</h1>
                         </div>
@@ -94,8 +94,8 @@ const SideBar = ({currentUser, active, setActive, fullProfile}) => {
                                 onClick={() => setActive('Admin')}
                             >
                                 <span className={`${active === "Admin" ? "inner-active" : "" } inner-button-container`}>
-                                    {darkTheme ? <img src="/svg-home/admin-white.svg" className="svg"></img> : <img src="/svg-home/admin-black.svg" className="svg"></img>}
-                                    {darkTheme ? <p className="label" style={{color: "white"}}>Admin Panel</p> : <p className="label" style={{color: "black"}}>Admin Panel</p>}
+                                    <img src={`${import.meta.env.BASE_URL}/svg-home/admin-black.svg`} className="svg"></img>
+                                    <p className="label" style={{color: "black"}}>Admin Panel</p>
                                 </span>
                             </div>
                         )
@@ -103,7 +103,7 @@ const SideBar = ({currentUser, active, setActive, fullProfile}) => {
                 </nav>
             </div>
             <div className="logout">
-                <p className={darkTheme ? "dark" : "light"}
+                <p className="light"
                     onClick={() => handleLogoutClick()}
                 >
                     Logout

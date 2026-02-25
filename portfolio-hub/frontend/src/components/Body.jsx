@@ -1,11 +1,12 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import ProjectCard from './ProjectCard'
 import { projects } from '../data/data'
 import '../css/Body.css'
 
 const Body = () => {
-    const [active, setActive] = useState('react')
-    
+    const [active, setActive] = useState('All')
+
+
   return (
     <div className='body-main'>
         <div className="body-title">
@@ -27,11 +28,11 @@ const Body = () => {
                 >
                     <p className={`express-p ${active === 'express' ? 'p-active' : ''}`}>Express</p>
                 </div>
-                <div className={`mongo ${active === 'mongo' ? 'active' : ''}`}
-                    onClick={() => setActive('mongo')}
+                <div className={`mongo ${active === 'mongodb' ? 'active' : ''}`}
+                    onClick={() => setActive('mongodb')}
                 >
                     <img src={`${import.meta.env.BASE_URL}/hub/mongo/mongo.svg`} alt=""/>
-                    <p className={`mongo-p ${active === 'mongo' ? 'p-active' : ''}`}>Mongo</p>
+                    <p className={`mongo-p ${active === 'mongodb' ? 'p-active' : ''}`}>Mongo</p>
                 </div>
             </div>
         </div>
@@ -41,7 +42,7 @@ const Body = () => {
                 <h1> Projects </h1>
             </div>
             <div className="project-body">
-                <ProjectCard cardData={projects}/>
+                <ProjectCard cardData={projects} active={active}/>
             </div>
         </div>
     </div>

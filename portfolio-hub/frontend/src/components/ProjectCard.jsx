@@ -1,13 +1,24 @@
 import '../css/ProjectCard.css'
 import { Link } from 'react-router-dom'
-const ProjectCard = ({cardData}) => {
-    if(cardData) {
-        console.log(cardData)
-    }
+const ProjectCard = ({cardData, active}) => {
+    console.log(cardData)
+    console.log(active)
+    if(cardData.length === 0) return
+    const filteredCards = cardData.filter((card) => {
+        if(!active || active == "All") {
+            return true;
+        }     
+
+        return card.createdWith.some((framework) => {
+            return framework.name.toLowerCase() === active;
+        });
+    });       
+    
   
     return (
         <>
-            {cardData.map(card => {
+            {filteredCards.map(card => {
+                console.log(card)
                 return (
                     <div className='card-container' key={card.name}>
                         <div className="inner-card-container">
@@ -27,8 +38,8 @@ const ProjectCard = ({cardData}) => {
                             <div className="card-made-with">
                                 {card.createdWith.map(framework => (
                                     <div 
-                                        className={`card-framework ${framework.name.toLowerCase()}1`} 
                                         key={framework.name}
+                                        className={`card-framework ${framework.name.toLowerCase()}1`} 
                                         style={{backgroundColor: framework.color}}
                                     >
                                         <p style={{color: framework.darkColor}}>{framework.name}</p>
@@ -37,11 +48,10 @@ const ProjectCard = ({cardData}) => {
                             </div>
                             <div className="card-button-container">
                                 <div className="card-button-ic">
-                                    <Link to={card.link}>
+                                    <Link to={card.link} state={{animateOpen: true}}>
                                         <div className="card-button">
                                             <p>Launch App &rsaquo;</p>
                                         </div>
-
                                     </Link>
                                 </div>
                             </div>

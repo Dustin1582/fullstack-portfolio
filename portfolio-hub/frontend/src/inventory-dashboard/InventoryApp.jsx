@@ -25,8 +25,6 @@ function InventoryApp() {
   const [registerPass, setRegisterPass] = useState('')
   const [regData, setRegData] = useState(null)
 
-  const darkTheme = window.matchMedia('(prefers-color-scheme: dark)').matches;
-
   const ranOnce = useRef(false);
 
     const decodePayload = (token) => {
@@ -156,7 +154,6 @@ function InventoryApp() {
           setPassword={setPassword} 
           handleLogin={handleLogin} 
           setCurrentUser={setCurrentUser}
-          darkTheme={darkTheme}
           />
         }>
         </Route>
@@ -167,14 +164,12 @@ function InventoryApp() {
           setRegisterUser={setRegisterUser} 
           setRegisterPass={setRegisterPass} 
           handleRegister={handleRegister} 
-          darkTheme={darkTheme}
-
           />
         }>
         </Route>
         
         <Route path="home" element={<RequireAuth>
-          <Home currentUser={currentUser} registerUser={registerUser} darkTheme={darkTheme}/>
+          <Home currentUser={currentUser} registerUser={registerUser} />
         </RequireAuth>} />
         
         {/* ✅ optional fallback */}

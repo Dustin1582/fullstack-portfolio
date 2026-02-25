@@ -1,6 +1,6 @@
 import { Link, useNavigate } from "react-router-dom"
 import '../css/registerPage.css'
-const Register = ({registerUser, registerPass, setRegisterUser, setRegisterPass, handleRegister, darkTheme}) => {
+const Register = ({registerUser, registerPass, setRegisterUser, setRegisterPass, handleRegister}) => {
     const navigate = useNavigate()
     const handleSubmit = async (e) => {
         const ok = await handleRegister(e);
@@ -12,7 +12,7 @@ const Register = ({registerUser, registerPass, setRegisterUser, setRegisterPass,
 
   return (
     <div className="register-container">
-        <div className={`${darkTheme ? "card" : "card-light"}`}>
+        <div className="card-light">
             <h1>Register</h1>
             <form className="register" onSubmit={handleSubmit} method="post" autoComplete="on" action="/login">
                 <label htmlFor="username" className="label">Username</label>

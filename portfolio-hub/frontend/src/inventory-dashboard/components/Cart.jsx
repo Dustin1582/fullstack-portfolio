@@ -7,7 +7,7 @@ const Cart = ({
   order, setOrder, keepItem, 
   setKeepItem, setConfirmedOrder, 
   currentUser, supplier, 
-  setIsLoading, darkTheme
+  setIsLoading
 }) => {
   
   const { accessToken, setAccessToken } = useAuth();
