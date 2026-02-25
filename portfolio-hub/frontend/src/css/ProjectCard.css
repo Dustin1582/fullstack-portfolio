@@ -1,7 +1,7 @@
 .card-container {
     display: flex;
     flex-direction: column;
-    width: 32%;
+    min-width: 15rem;
     height: 40%;
     box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
     border: 1px solid rgba(0, 0, 0, 0.2);
@@ -44,6 +44,10 @@
 .card-title-desc>
 .card-desc>p {
     color: rgba(0, 0, 0, 0.7);
+}
+
+.card-desc > p {
+    font-size: 14px;
 }
 
 .card-made-with {
