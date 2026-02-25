@@ -19,6 +19,7 @@ function InventoryApp() {
   const [password, setPassword] = useState('');
   const [currentUser, setCurrentUser] = useState({userId: "", username: "", role: ""});
   const [isLoading, setIsLoading] = useState(false); 
+  const [isOpen, setIsOpen] = useState(false)
   //register state
   const [registerUser, setRegisterUser] = useState('')
   const [registerPass, setRegisterPass] = useState('')
@@ -117,6 +118,7 @@ function InventoryApp() {
       return false
     } finally {
         setIsLoading(false);
+        setIsOpen(false)
     }
   }
 
@@ -139,6 +141,7 @@ function InventoryApp() {
         return false
       }
       setRegData(json)
+      setIsOpen(false)
       return true
 
     } catch (error) {
@@ -161,6 +164,8 @@ function InventoryApp() {
           handleLogin={handleLogin} 
           setCurrentUser={setCurrentUser}
           isLoading={isLoading}
+          isOpen={isOpen}
+          setIsOpen={setIsOpen}
           />
         }>
         </Route>

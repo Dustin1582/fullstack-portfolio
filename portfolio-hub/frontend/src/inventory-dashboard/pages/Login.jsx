@@ -3,13 +3,11 @@ import '../css/loginPage.css'
 import { useAuth } from "../context/AuthContext"
 import { useEffect, useRef, useState } from "react"
 
-const Login = ({username, password, setUsername, setPassword, handleLogin, setCurrentUser, isLoading}) => {
+const Login = ({username, password, setUsername, setPassword, handleLogin, setCurrentUser, isLoading, setIsOpen, isOpen}) => {
   const location = useLocation();
   const shouldAnimateOpen = Boolean(location.state && location.state.animateOpen);
   const navigate = useNavigate()
   const { accessToken, setStatus } = useAuth()
-
-  const [isOpen, setIsOpen] = useState(false)
   const navigatedOnce = useRef(false); 
 
 
@@ -18,7 +16,8 @@ const Login = ({username, password, setUsername, setPassword, handleLogin, setCu
 
     requestAnimationFrame(() => {
       setIsOpen(true);
-    })
+    });
+
   }, [shouldAnimateOpen])
 
 
@@ -43,12 +42,11 @@ const Login = ({username, password, setUsername, setPassword, handleLogin, setCu
       
       setTimeout(() => {
         navigate("/inventory/home", { replace: true });
-
       }, 800)
-
+      
     }
   }, [accessToken, location.pathname, navigate]);
-
+  
   const handleSubmit = async (e) => {
     e.preventDefault();
     setCurrentUser(username)
@@ -60,14 +58,16 @@ const Login = ({username, password, setUsername, setPassword, handleLogin, setCu
       setTimeout(() => {
         setUsername('');
         setPassword('');
+        setIsOpen(false)
+        
       }, 800)
     }
   }
 
   return (
     <div className={`login-open-shell ${shouldAnimateOpen && isOpen ? "open" : ""}`}>
-      <div className={`progress-indecator ${isLoading ? "loading" : ""}`} ></div>
       <div className="login-container">
+        <div className={`progress-indecator ${isLoading ? "loading" : ""}`} ></div>
           <div className="card-light">
               <h1>Login</h1>
 
