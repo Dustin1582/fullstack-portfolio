@@ -1,0 +1,139 @@
+.main-resume {
+    font-family: Candara, "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    background: #ECEAE7;
+    max-width: 1425px;
+    height: 100vh;
+    margin: 0 auto;
+    overflow-y: auto;
+    position: relative;
+}
+
+.home {
+    text-decoration: none;
+}
+
+.resume-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem;
+}
+
+
+
+.back-button {
+    position: absolute;
+    right: 1rem;
+    top: 1rem;
+    border: 5px solid rgba(0, 0, 0, 0.4);
+    border-radius: 50%;
+    padding: 0.5rem;
+    transform: scale(1);
+    transition: transform 0.04s ease-in;
+    cursor: pointer;
+}
+
+.back-button:hover {
+    transform: scale(1.01);
+}
+
+.back-button:active {
+    transform: scale(0.99);
+    
+}
+
+.back-button > h2 {
+    margin: 0;
+    padding: 0;
+    color: rgba(0, 0, 0, 0.6);
+}
+
+
+.name > h1{
+    margin: 0;
+    font-size: 52px;
+    letter-spacing: 6px;
+    font-weight:  500;
+}
+
+.title > h3 {
+    font-size: 28px;
+    font-weight: 550;
+    margin-top: 0.5rem;
+}
+
+.green {
+    color: #4E6351;
+}
+
+.body-resume {
+    width: 50%;
+    margin: 0 2rem;
+}
+
+.contact {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.25rem;
+    width: 100%;
+    border-top: 1px solid rgba(0, 0, 0, 0.4);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.4);
+}
+
+.br {
+    width: 2px;
+    height: 18px;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.bt {
+    height: 1px;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.obj {
+    margin-top: 1rem;
+    display: flex;
+    
+    gap: 2rem;
+}
+
+.obj-title {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    width: 25%;
+
+}
+
+.obj-title > h4 {
+    margin: 0;
+}
+
+.obj-desc {
+    width: 70%;
+}
+
+.obj-desc > p {
+    margin: 0;
+}
+
+.exp-title > h4 {
+    margin: 0;
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.job-exp > ul > li {
+    margin-bottom: 0.5rem;
+}
+
+.school-name-title > h4, .school-title > h4 {
+    margin: 0 0 0.5rem 0;
+}
+
+.leadership-c {
+    margin-bottom: 2rem;
+}

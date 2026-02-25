@@ -5,7 +5,7 @@ const Register = ({registerUser, registerPass, setRegisterUser, setRegisterPass,
     const handleSubmit = async (e) => {
         const ok = await handleRegister(e);
         setTimeout(() => {
-            if(ok) navigate('/login', {replace: true})
+            if(ok) navigate('inventory/login', {replace: true})
 
         }, 800);
     }
@@ -42,7 +42,7 @@ const Register = ({registerUser, registerPass, setRegisterUser, setRegisterPass,
                 >Submit</button>
             </form>
         </div>
-        <p>Have an account? <Link to='/login'>Login here.</Link></p>
+        <p>Have an account? <Link to='/inventory/login'>Login here.</Link></p>
     </div>
   )
 }

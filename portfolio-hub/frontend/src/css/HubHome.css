@@ -1,0 +1,14 @@
+.main-hub-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    background: rgb(235, 235, 235);
+    max-width: 1425px;
+    height: 100vh;
+    margin: 0 auto;
+    overflow-y: hidden;
+    
+}
+
+

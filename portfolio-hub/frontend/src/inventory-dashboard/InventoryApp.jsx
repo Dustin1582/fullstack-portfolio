@@ -1,20 +1,19 @@
 import { Navigate, Route, Routes } from "react-router-dom"
 import { useEffect, useRef, useState } from "react"
 import Login from "./pages/Login"
-import Header from "./components/Header";
-import Footer from "./components/Footer";
 import Register from "./pages/Register";
 import AuthHandler from "./components/AuthHandler";
 import Home from "./pages/Home";
 import RequireAuth from "./components/RequireAuth";
 import { useAuth } from "./context/AuthContext";
+import './css/InventoryApp.css'
 
 
 
-function App() {
+function InventoryApp() {
   const { setAccessToken } = useAuth();
   const URL = import.meta.env.PROD ? "https://fullstack-portfolio-1-41oq.onrender.com" : "http://localhost:5500";
-  console.log("API URL:", URL, "MODE:", import.meta.env.MODE, "PROD:", import.meta.env.PROD);
+  
 
 
   // login in state
@@ -149,8 +148,8 @@ function App() {
 
     <div className="content">
       <Routes>
-        <Route path="/" element={<AuthHandler />} />
-        <Route path="/login" element={<Login 
+        <Route index element={<AuthHandler />} />
+        <Route path="login" element={<Login 
           username={username} 
           password={password} 
           setUsername={setUsername} 
@@ -162,7 +161,7 @@ function App() {
         }>
         </Route>
 
-        <Route path="/register" element={
+        <Route path="register" element={
           <Register registerUser={registerUser} 
           registerPass={registerPass} 
           setRegisterUser={setRegisterUser} 
@@ -174,12 +173,12 @@ function App() {
         }>
         </Route>
         
-        <Route path="/home" element={<RequireAuth>
+        <Route path="home" element={<RequireAuth>
           <Home currentUser={currentUser} registerUser={registerUser} darkTheme={darkTheme}/>
         </RequireAuth>} />
         
         {/* ✅ optional fallback */}
-        <Route path="*" element={<Navigate to="/login" replace />} />
+        <Route path="*" element={<Navigate to="login" replace />} />
       </Routes>
     </div>
 
@@ -187,4 +186,4 @@ function App() {
   )
 }
 
-export default App
+export default InventoryApp

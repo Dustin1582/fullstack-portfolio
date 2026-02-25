@@ -32,18 +32,19 @@
 
 
 #root {
-    min-height: 100vh;
-    display: flex; 
-    flex-direction: column;
-    background-color: var(--outter-bg);
-
+  background-color: var(--outter-bg);
 }
 
 body {
+
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
   margin: 0;
   padding: 0;
   background: var(--outter-bg);
   color: var(--text);
+  overflow: hidden;
 }
 
 a {
@@ -83,11 +84,6 @@ button {
 
 .footer {
   background: var(--header-bg);
-}
-
-.content {
-  flex: 1;
-  display: flex;
 }
 
 /* Chrome, Edge, Safari */

@@ -1,0 +1,95 @@
+.body-main {
+    flex: 1;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: aliceblue;
+}
+
+
+.body-title {
+    text-align: center;
+    margin: 3rem 0;
+}
+
+.body-t-desc > p {
+    color: rgba(0, 0, 0, 0.7);
+}
+
+.frameworks {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.react, .mongo {
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+}
+
+.react, .express, .mongo {
+    border: 1px solid rgba(0, 0, 0, 0.4);
+    border-radius: 6px;
+    padding: 0.5rem 1rem;
+    transform: scale(1);
+    transition: transform 0.04s ease-in;
+    cursor: pointer;
+    background: rgb(225, 225, 220);
+}
+
+.react:hover,
+.express:hover,
+.mongo:hover {
+    transform: scale(1.01);
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+}
+
+.react:active,
+.express:active,
+.mongo:active {
+    transform: scale(0.99);
+    box-shadow: none;
+}
+
+.react > p, .express > p, .mongo > p {
+    margin: 0;
+}
+
+.react > img,
+.mongo > img {
+    height: 22px;
+    width: 22px;
+}
+
+.active {
+    background: linear-gradient(to bottom right, #6F8FCB 0%, #4F6FAE 50%, #2F4E88 100%);
+}
+
+.p-active {
+    color: white;
+}
+
+.bb {
+    height: 1px;
+    width: 70%;
+    background: rgba(0, 0, 0, 0.1);
+    margin-bottom: 3rem;
+}
+
+.projects-main {
+    width: 70%;
+    height: 40rem;
+
+}
+
+.project-body {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    height: 80%;
+    overflow-y: auto;
+
+}

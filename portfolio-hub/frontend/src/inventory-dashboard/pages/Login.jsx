@@ -19,7 +19,7 @@ const Login = ({username, password, setUsername, setPassword, handleLogin, setCu
       return;
     }
 
-    if (location.pathname !== "/login") {
+    if (location.pathname !== "/inventory/login") {
       return;
     }
 
@@ -28,12 +28,12 @@ const Login = ({username, password, setUsername, setPassword, handleLogin, setCu
     }
 
 
-    if (accessToken && location.pathname === "/login" && !navigatedOnce.current) {
+    if (accessToken && location.pathname === "/inventory/login" && !navigatedOnce.current) {
       navigatedOnce.current = true;
       setStatus('authed')
       
       setTimeout(() => {
-        navigate("/home", { replace: true });
+        navigate("/inventory/home", { replace: true });
 
       }, 800)
 
@@ -88,7 +88,7 @@ const Login = ({username, password, setUsername, setPassword, handleLogin, setCu
                 >Login</button>
             </form>
         </div>
-      <p>New? <Link to='/register'>Register Here</Link></p>
+      <p>New? <Link to='/inventory/register'>Register Here</Link></p>
     </div>
   )
 }

@@ -1,0 +1,108 @@
+.card-container {
+    display: flex;
+    flex-direction: column;
+    width: 32%;
+    height: 40%;
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    border-radius: 9px;
+}
+
+.card-title-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+
+.inner-card-container {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+}
+
+.icon-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    border-radius: 9px;
+    height: 4rem;
+    width: 4rem;
+}
+
+.icon-box > img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.card-title-desc > .card-title > h3, .card-desc > p {
+    margin: 0.5rem 0;
+}
+
+.card-title-desc>
+.card-desc>p {
+    color: rgba(0, 0, 0, 0.7);
+}
+
+.card-made-with {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 0.5rem;
+    margin-top: 1rem;
+}
+
+.card-framework {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1 1 0;
+    min-width: 0;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+}
+
+.card-framework > p {
+    margin: 0;
+    padding: 0.25rem;
+    font-size: 14px;
+}
+
+.card-button-container {
+    width: 100%;
+    margin-top: 2rem;
+}
+
+.card-button.ic {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 70%;
+}
+.card-button {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: scale(1);
+    transition: transform 0.03s ease;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    border-radius: 9px;
+    background: linear-gradient(to bottom right, #6F8FCB 0%, #4F6FAE 50%, #2F4E88 100%);
+    cursor: pointer;
+}
+
+.card-button:hover {
+    transform: scale(1.01);
+}
+
+.card-button:active {
+    transform: scale(0.99);
+}
+
+.card-button > p {
+    margin: 0;
+    padding: 0.5rem 0;
+    color: white;
+}

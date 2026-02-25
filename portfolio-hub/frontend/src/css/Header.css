@@ -1,0 +1,45 @@
+.header {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    background: rgb(225, 225, 220);
+}
+
+.header > h2 {
+    margin: 0;
+}
+
+.header-nav {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+.resume, .github > a, .linkedin > a {
+    text-decoration: none;
+    transform: scale(1);
+    transition: transform 0.04s ease-in;
+    color: rgba(0, 0, 0, 0.7);
+}
+
+.resume:hover,
+.github>a:hover,
+.linkedin>a:hover {
+    transform: scale(1.01);
+    color: rgb(1, 1, 233);
+}
+
+.resume:active,
+.github>a:active,
+.linkedin>a:active {
+    transform: scale(0.99);
+}
+
+.header-nav > * {
+    cursor: pointer;
+}
+
+.header-nav > *:hover {
+    color: blue;
+}
