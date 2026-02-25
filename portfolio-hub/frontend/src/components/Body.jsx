@@ -19,7 +19,7 @@ const Body = () => {
                 <div className={`react ${active === 'react' ? "active" : "" }`}
                     onClick={() => setActive('react')}
                 >
-                    <img src={`${active === 'react' ? "/hub/react/react-white.svg" : "/hub/react/react-blue.svg"}`} alt="react logo"/>
+                    <img src={`${active === 'react' ? `${import.meta.env.BASE_URL}/hub/react/react-white.svg` : `${import.meta.env.BASE_URL}/hub/react/react-blue.svg`}`} alt="react logo"/>
                     <p className={`react-p ${active === 'react' ? 'p-active' : ''}`}>React</p>
                 </div>
                 <div className={`express ${active === 'express' ? "active" : "" }`}
@@ -30,7 +30,7 @@ const Body = () => {
                 <div className={`mongo ${active === 'mongo' ? 'active' : ''}`}
                     onClick={() => setActive('mongo')}
                 >
-                    <img src="/hub/mongo/mongo.svg" alt=""/>
+                    <img src={`${import.meta.env.BASE_URL}/hub/mongo/mongo.svg`} alt=""/>
                     <p className={`mongo-p ${active === 'mongo' ? 'p-active' : ''}`}>Mongo</p>
                 </div>
             </div>
