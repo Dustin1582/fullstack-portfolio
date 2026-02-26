@@ -1,4 +1,4 @@
-import { createContext, useContext, useEffect, useMemo, useState } from "react";
+import { createContext, useContext, useEffect, useMemo, useRef, useState } from "react";
 
 const AuthContext = createContext();
 
@@ -6,14 +6,29 @@ export const AuthProvider = (props) => {
     const children = props.children;
     const [accessToken, setAccessToken] = useState("");
     const [status, setStatus] = useState('loading'); // loading | authed | unauthed
-    
+    const [currentUser, setCurrentUser] = useState({userId: "", username: "", role: ""});
     const URL = import.meta.env.PROD ? "https://fullstack-portfolio-1-41oq.onrender.com" : "http://localhost:5500";
-      console.log("API URL:", URL, "MODE:", import.meta.env.MODE, "PROD:", import.meta.env.PROD);
+    
+    const setUserFromAccessToken = (accessToken) => {
+        const payload = decodePayload(accessToken);
+
+        setCurrentUser({
+            userId: payload.userId,
+            username: payload.username,
+            role: payload.role
+        });
+    }
+
+
+    let ranOnce = useRef(false);
     useEffect(() => {
+        if(ranOnce.current) return;
+        ranOnce.current = true;
         let isMounted = true
+
         const bootstrap = async () => {
             try {
-                const res = await fetch("http://localhost:5500/refresh", {
+                const res = await fetch(URL + "/refresh", {
                 method: 'GET',
                 credentials: "include"
                 });
@@ -39,6 +54,7 @@ export const AuthProvider = (props) => {
 
                 if(isMounted) {
                     setAccessToken(json.accessToken);
+                    setUserFromAccessToken(json.accessToken)
                     setStatus("authed");
                 }
 
@@ -57,8 +73,9 @@ export const AuthProvider = (props) => {
 
         return () => {
             isMounted = false
+            ranOnce.current = false
         }
-    }, []);
+    }, [URL]);
 
     const value = useMemo(() => {
         
@@ -67,7 +84,9 @@ export const AuthProvider = (props) => {
             setAccessToken: setAccessToken,
             status: status,
             setStatus: setStatus,
-            URL:URL
+            URL:URL,
+            currentUser: currentUser,
+            setCurrentUser: setCurrentUser
         }
         
     }, [accessToken, status]);

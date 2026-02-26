@@ -3,22 +3,28 @@ import '../css/loginPage.css'
 import { useAuth } from "../context/AuthContext"
 import { useEffect, useRef, useState } from "react"
 
-const Login = ({username, password, setUsername, setPassword, handleLogin, setCurrentUser, isLoading, setIsOpen, isOpen}) => {
+const Login = ({username, password, setUsername, setPassword, handleLogin, isLoading, setIsOpen, isOpen}) => {
   const location = useLocation();
   const shouldAnimateOpen = Boolean(location.state && location.state.animateOpen);
   const navigate = useNavigate()
   const { accessToken, setStatus } = useAuth()
   const navigatedOnce = useRef(false); 
 
+  const [showPassword, setShowPassword] = useState(false)
+
 
   useEffect(() => {
-    if(!shouldAnimateOpen) return;
+    if(!shouldAnimateOpen){
+      setIsOpen(true);
+      return
+    };
 
+    setIsOpen(false);
     requestAnimationFrame(() => {
       setIsOpen(true);
     });
 
-  }, [shouldAnimateOpen])
+  }, [shouldAnimateOpen, isOpen])
 
 
   useEffect(function () {
@@ -49,7 +55,6 @@ const Login = ({username, password, setUsername, setPassword, handleLogin, setCu
   
   const handleSubmit = async (e) => {
     e.preventDefault();
-    setCurrentUser(username)
     
     const ok = await handleLogin(e)
     
@@ -64,8 +69,15 @@ const Login = ({username, password, setUsername, setPassword, handleLogin, setCu
     }
   }
 
+    const shellClassName = [
+    "login-open-shell",
+    shouldAnimateOpen ? "" : "open no-animate", 
+    shouldAnimateOpen && isOpen ? "open" : "", //
+    ].filter(Boolean)
+      .join(" ");
+
   return (
-    <div className={`login-open-shell ${shouldAnimateOpen && isOpen ? "open" : ""}`}>
+    <div className={shellClassName}>
       <div className="login-container">
         <div className={`progress-indecator ${isLoading ? "loading" : ""}`} ></div>
           <div className="card-light">
@@ -84,15 +96,24 @@ const Login = ({username, password, setUsername, setPassword, handleLogin, setCu
                       autoFocus
                   />
                   <label htmlFor="password" className="label">Password</label>
-                  <input 
-                      type="password"
-                      name="password" 
-                      value={password}
-                      onChange={(e) => setPassword(e.target.value)} 
-                      id="password" 
-                      autoComplete="current-password"
-                      required    
-                  />
+                  <div className="password-button">
+                    <input 
+                        type={`${showPassword ? "text" : "password"}`}
+                        name="password" 
+                        value={password}
+                        onChange={(e) => setPassword(e.target.value)} 
+                        id="password" 
+                        autoComplete="current-password"
+                        required    
+                    />
+                    
+                    <div className="pwd-btn"
+                      onClick={() => setShowPassword(!showPassword)}
+                    >
+                      <img src={`${showPassword ? `${import.meta.env.BASE_URL}/pass/hide.svg` : `${import.meta.env.BASE_URL}/pass/show.svg` }`} alt="toggle password" />
+                    </div>
+                    
+                  </div>
                   <button 
                       type="submit"
                       className="login-button"

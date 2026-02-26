@@ -12,9 +12,9 @@ import Credits from '../pages/Credits'
 import Admin from './Admin'
 
 
-const Home = ({currentUser, registerUser}) => {
+const Home = ({registerUser}) => {
   
-  const { accessToken, setAccessToken, URL } = useAuth();
+  const { accessToken, setAccessToken, URL, currentUser } = useAuth();
   
   //create inventory items states
   const [active, setActive] = useState("Inventory");

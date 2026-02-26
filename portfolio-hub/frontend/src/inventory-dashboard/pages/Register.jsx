@@ -1,6 +1,9 @@
 import { Link, useNavigate } from "react-router-dom"
 import '../css/registerPage.css'
+import { useState } from "react"
 const Register = ({registerUser, registerPass, setRegisterUser, setRegisterPass, handleRegister}) => {
+    
+    const [showPassword, setShowPassword] = useState(false)
     const navigate = useNavigate()
     const handleSubmit = async (e) => {
         const ok = await handleRegister(e);
@@ -27,15 +30,24 @@ const Register = ({registerUser, registerPass, setRegisterUser, setRegisterPass,
                     autoFocus
                 />
                 <label htmlFor="password" className="label">Password</label>
-                <input 
-                    type="password"
-                    name="password" 
-                    value={registerPass}
-                    onChange={(e) => setRegisterPass(e.target.value)} 
-                    id="password" 
-                    autoComplete="new-password"
-                    required    
+                <div className="password-button">
+
+                    <input 
+                        type={`${showPassword ? "text" : "password"}`}
+                        name="password" 
+                        value={registerPass}
+                        onChange={(e) => setRegisterPass(e.target.value)} 
+                        id="password" 
+                        autoComplete="new-password"
+                        required    
                     />
+
+                    <div className="pwd-btn"
+                        onClick={() => setShowPassword(!showPassword)}
+                    >
+                        <img src={`${showPassword ? `${import.meta.env.BASE_URL}/pass/hide.svg` : `${import.meta.env.BASE_URL}/pass/show.svg` }`} alt="toggle password" />
+                    </div>
+                </div>
                 <button 
                     type="submit"
                     className="register-button"

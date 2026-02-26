@@ -11,84 +11,18 @@ import './css/InventoryApp.css'
 
 
 function InventoryApp() {
-  const { setAccessToken } = useAuth();
-  const URL = import.meta.env.PROD ? "https://fullstack-portfolio-1-41oq.onrender.com" : "http://localhost:5500";
-  
-  // login in state
-  const [username, setUsername] = useState('');
-  const [password, setPassword] = useState('');
-  const [currentUser, setCurrentUser] = useState({userId: "", username: "", role: ""});
-  const [isLoading, setIsLoading] = useState(false); 
-  const [isOpen, setIsOpen] = useState(false)
-  //register state
-  const [registerUser, setRegisterUser] = useState('')
-  const [registerPass, setRegisterPass] = useState('')
-  const [regData, setRegData] = useState(null)
-
-  const ranOnce = useRef(false);
-
-    const decodePayload = (token) => {
-      const payloadPart = token.split(".")[1];
-
-      // JWT is base64url, not plain base64
-      const base64 = payloadPart.replace(/-/g, "+").replace(/_/g, "/");
-      const payloadJson = atob(base64);
-
-      return JSON.parse(payloadJson);
-    }
-  
-  function setUserFromAccessToken(accessToken) {
-    const payload = decodePayload(accessToken);
-
-    setCurrentUser({
-      userId: payload.userId,
-      username: payload.username,
-      role: payload.role
-    });
-  }
-
-
-  async function tryRefreshLogin() {
-  try {
-    const res = await fetch(URL + "/refresh", {
-      method: "GET",
-      credentials: "include",
-    });
-
-    const contentType = res.headers.get("content-type") || "";
-    let data = null;
-
-    if (contentType.includes("application/json")) {
-      data = await res.json();
-    } else {
-      const text = await res.text();
-      data = { message: text };
-    }
-
-    if (!res.ok) {
-      console.error("no credentials found:", res.status, data);
-      return false;
-    }
-
-    setAccessToken(data.accessToken);
-    setUserFromAccessToken(data.accessToken);
-    return true;
-  } catch (error) {
-    console.error(error.message);
-    return false;
-  }
-}
-
-
-  useEffect(() => {
-  if (ranOnce.current) {
-    return;
-  }
-  ranOnce.current = true;
-
-  tryRefreshLogin();
-  }, []);
-
+    const { setAccessToken } = useAuth();
+    const URL = import.meta.env.PROD ? "https://fullstack-portfolio-1-41oq.onrender.com" : "http://localhost:5500";
+    
+    // login in state
+    const [username, setUsername] = useState('');
+    const [password, setPassword] = useState('');
+    const [isLoading, setIsLoading] = useState(false); 
+    const [isOpen, setIsOpen] = useState(false)
+    //register state
+    const [registerUser, setRegisterUser] = useState('')
+    const [registerPass, setRegisterPass] = useState('')
+    const [regData, setRegData] = useState(null)
 
 
   const handleLogin = async (e) => {
@@ -118,7 +52,6 @@ function InventoryApp() {
       return false
     } finally {
         setIsLoading(false);
-        setIsOpen(false)
     }
   }
 
@@ -141,7 +74,6 @@ function InventoryApp() {
         return false
       }
       setRegData(json)
-      setIsOpen(false)
       return true
 
     } catch (error) {
@@ -162,7 +94,6 @@ function InventoryApp() {
           setUsername={setUsername} 
           setPassword={setPassword} 
           handleLogin={handleLogin} 
-          setCurrentUser={setCurrentUser}
           isLoading={isLoading}
           isOpen={isOpen}
           setIsOpen={setIsOpen}
@@ -181,7 +112,7 @@ function InventoryApp() {
         </Route>
         
         <Route path="home" element={<RequireAuth>
-          <Home currentUser={currentUser} registerUser={registerUser} />
+          <Home registerUser={registerUser} />
         </RequireAuth>} />
         
         {/* ✅ optional fallback */}

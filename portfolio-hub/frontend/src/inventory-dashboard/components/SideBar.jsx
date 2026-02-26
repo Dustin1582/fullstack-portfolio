@@ -52,7 +52,7 @@ const SideBar = ({currentUser, active, setActive, fullProfile}) => {
             setAccessToken(""); // important, clear local auth
             await logout();     // wait for server cookie clear
         } finally {
-            navigate("login", { replace: true });
+            navigate("/inventory/login", { replace: true });
         }
     };
 
