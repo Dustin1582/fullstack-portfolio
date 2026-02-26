@@ -9,6 +9,27 @@ export const AuthProvider = (props) => {
     const [currentUser, setCurrentUser] = useState({userId: "", username: "", role: ""});
     const URL = import.meta.env.PROD ? "https://fullstack-portfolio-1-41oq.onrender.com" : "http://localhost:5500";
     
+    const decodePayload = (token) => {
+        if(!token || typeof token !== "string") return null;
+
+        const parts = token.split(".");
+        if(parts.length !== 3) return null;
+
+        const payloadPart = parts[1];
+
+        const base64 = payloadPart.replace(/-/g, "+").replace(/_/g, "/");
+        const padded = base64.padEnd(base64.length + ((4 - (base64.length % 4)) % 4), "=");
+
+        try {
+            const jsonString = atob(padded);
+            return JSON.parse(jsonString);
+        } catch (error) {
+            console.error("Auth Context: ", error.message);
+            return null
+        }
+
+    }
+
     const setUserFromAccessToken = (accessToken) => {
         const payload = decodePayload(accessToken);
 
@@ -86,7 +107,8 @@ export const AuthProvider = (props) => {
             setStatus: setStatus,
             URL:URL,
             currentUser: currentUser,
-            setCurrentUser: setCurrentUser
+            setCurrentUser: setCurrentUser,
+            setUserFromAccessToken: setUserFromAccessToken
         }
         
     }, [accessToken, status]);

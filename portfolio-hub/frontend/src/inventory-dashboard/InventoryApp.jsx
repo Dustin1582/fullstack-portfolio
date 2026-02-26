@@ -11,7 +11,7 @@ import './css/InventoryApp.css'
 
 
 function InventoryApp() {
-    const { setAccessToken } = useAuth();
+    const { setAccessToken, setUserFromAccessToken } = useAuth();
     const URL = import.meta.env.PROD ? "https://fullstack-portfolio-1-41oq.onrender.com" : "http://localhost:5500";
     
     // login in state
