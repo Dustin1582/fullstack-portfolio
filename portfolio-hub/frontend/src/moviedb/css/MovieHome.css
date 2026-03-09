@@ -1,0 +1,20 @@
+.body-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100vh;
+    background-color: black;
+}
+
+.movie-main-container {
+    width: 100%;
+    max-width: 1420px;
+    min-height: 100vh;
+    margin: 0 auto;
+    background-color: rgba(22, 22, 22, 0.856);
+
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border: 1px solid rgba(255, 255, 255, 0.25)
+}

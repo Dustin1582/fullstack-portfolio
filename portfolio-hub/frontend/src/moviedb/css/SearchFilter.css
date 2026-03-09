@@ -1,0 +1,216 @@
+.search-filter-outter-border{
+    width: 98%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    background: linear-gradient(to top left, #151721 70%, #1d1e31 85%, #1f2038 90%);
+    border: 1px solid rgba(255, 0, 40, 0.35);
+    border-radius: 12px;
+    box-shadow: 0 0 24px rgba(255, 0, 40, 0.20);
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.search-genre-inner {
+    border-bottom: 1PX solid rgba(255, 255, 255, 0.15);
+    padding-bottom: 0.75rem;
+}
+
+.search-genre-inner > h3 {
+    color: rgba(255, 255, 255, 0.85);
+    margin:0.25rem 0 0.45rem 0;
+}
+
+.search-header {
+    background: linear-gradient(to left, #0f1018, #0e0e18, #121322);
+    border-bottom: 1PX solid rgba(255, 255, 255, 0.25);
+}
+
+.search-header > h3 {
+    color: rgba(255, 255, 255, 0.85);
+    margin: 1rem;
+}
+
+.search-genre {
+    
+    margin: 0.5rem 1rem;
+}
+
+.cb {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    cursor: pointer;
+    user-select: none;
+    margin: 0.15rem 0 0.30rem 0rem;
+}
+
+
+.cb-input {
+    position: absolute;
+    opacity: 0;
+    width: 1px;
+    height: 1px;
+}
+
+/* new checkbox */
+.cb-box {
+    width: 20px;
+    height: 20px;
+    border-radius: 4px;
+    background-color: #0e0e1a;
+    border: 2px solid rgba(255, 255, 255, 0.25);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transform: scale(1);
+    transition: transform 0.032s ease-in;
+}
+
+.cb-box.red {
+    border: 2px solid rgba(255, 0, 40, 0.9);
+    
+}
+
+.cb-box:hover {
+    transform: scale(1.01);
+}
+
+.cb-text {
+    font-size: 15px;
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.85);
+    letter-spacing: 0.025rem;
+}
+
+.cb-box > img {
+    height: 18px;
+    width: 18px;
+}
+
+.no-checkmark {
+    opacity: 0;
+}
+
+.checkmark {
+    opacity: 1;
+}
+
+.movie-range {
+    display: flex;
+    height: 5rem;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    border-bottom: 1PX solid rgba(255, 255, 255, 0.15);
+    
+}
+
+.movie-range > label, .bottom-year-labels > label {
+    color: rgba(255, 255, 255, 0.85);
+    font-weight: 500;
+    padding:0 1rem 0 0.3rem;
+}
+
+.movie-range > label {
+    margin-bottom: 0.35rem;
+    font-weight: 600;
+}
+
+#year-range {
+    width: 90%;
+    height: 3px;
+    background: transparent;
+    accent-color: rgba(255, 0, 40, 0.9);
+}
+
+
+.bottom-year-labels {
+    display: inline-flex;
+    justify-content: space-between;
+    margin-top: 0.25rem;
+}
+
+.rating-options {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+    padding: 0.75rem 0;
+}
+
+.rating-options > h4 {
+    color: rgba(255, 255, 255, 0.85);
+    margin: 0 0 0.45rem 0;
+}
+
+.rating-option-button {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    background: linear-gradient(to left, #3A1A2D, #331A31, #2B182E);
+    
+    border: 1px solid rgba(255, 0, 40, 0.4);
+    border-radius: 7px;
+    padding: 5px 8px;
+    margin-right: 0.8rem;
+    
+    cursor: pointer;
+    transform: scale(1);
+    transition: transform 0.032s ease-in;
+}
+
+.rating-option-button:hover {
+    transform: scale(1.01);
+}
+
+.rating-option-button:active {
+    transform: scale(0.99);
+}
+
+.rating-option-button.active-rating {
+    border: 1px solid rgba(255, 0, 40, 0.9);
+    background: linear-gradient(to left, #421e34, #492547, #46274d);
+
+}
+
+.rating-option-button > img {
+    height: 18px;
+    width: 18px;
+}
+
+.rating-option-button > h6 {
+    color: rgba(255, 255, 255, 0.85);
+    margin: 0;
+}
+
+.submit-filter-container {
+    padding-top: 1rem;
+}
+
+.submit-filter-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform: scale(1);
+    background: linear-gradient(to left, rgb(255, 0, 38) 30%, rgba(255, 0, 40, 0.9), rgba(255, 0, 40, 0.6));
+    border: 1px solid rgba(255, 0, 40, 0.9);
+    border-radius: 8px;
+    box-shadow: 0 0 24px rgba(255, 0, 40, 0.40);
+    padding: 0.5rem 0;
+    cursor: pointer;
+    transition: transform 0.032s ease-in;
+}
+
+.submit-filter-button:hover {
+    transform: scale(1.01);
+}
+
+.submit-filter-button:active {
+    transform: scale(0.99);
+}
+
+.submit-filter-button > p {
+    margin: 0;
+    color: rgba(255, 255, 255, 0.85);
+    font-weight: 500;
+}

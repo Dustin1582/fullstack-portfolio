@@ -1,8 +1,6 @@
 import '../css/ProjectCard.css'
 import { Link } from 'react-router-dom'
 const ProjectCard = ({cardData, active}) => {
-    console.log(cardData)
-    console.log(active)
     if(cardData.length === 0) return
     const filteredCards = cardData.filter((card) => {
         if(!active || active == "All") {
@@ -18,7 +16,6 @@ const ProjectCard = ({cardData, active}) => {
     return (
         <>
             {filteredCards.map(card => {
-                console.log(card)
                 return (
                     <div className='card-container' key={card.name}>
                         <div className="inner-card-container">
