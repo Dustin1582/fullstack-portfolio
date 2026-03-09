@@ -69,6 +69,11 @@ const DisplayPage = () => {
       <div className="main-page selected-main-page"
         style={{backgroundImage: `url(${import.meta.env.BASE_URL}moviedb/movie_background.png)`}}
       >
+        <div className="back-button-movie"
+          onClick={() => nav('/movie/moviehub')}
+        >
+          <p>X</p>
+        </div>
       <div className="backdrop">
         <div className="left-column">
           <div className="selected-movie-image">
@@ -82,11 +87,6 @@ const DisplayPage = () => {
 
         </div>
         <div className="right-column">
-          <div className="back-button-movie"
-            onClick={() => nav('/movie/moviehub')}
-          >
-            <p>X</p>
-          </div>
           <div className="selected-movie-title">
             <h1>{movieData.original_title}</h1>
           </div>

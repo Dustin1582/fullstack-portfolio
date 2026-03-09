@@ -124,15 +124,15 @@ const SeeAllMovies = ({endPoint, isFiltered}) => {
   return (
     <div className='main-page-outside'>
         <div className="main-page" style={{backgroundImage: `url(${import.meta.env.BASE_URL}moviedb/movie_background.png)`}}>
+            <div className="back-button-movie"
+              onClick={() => nav('/movie/moviehub')}
+            >
+              <p>X</p>
+            </div>
             <div className="see-all-header-container">
               <div className="see-all-header">
                 <h2 className='first-child'>Wondering Whats</h2>
                 <h2 className='last-child'>Playing Now?</h2>
-                <div className="back-button-movie"
-                  onClick={() => nav('/movie/moviehub')}
-                >
-                  <p>X</p>
-                </div>
               </div>
               <div className="see-all-quote">
                 <p>Search thousands of movies from TMDb</p>

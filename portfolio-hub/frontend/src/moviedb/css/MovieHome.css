@@ -7,6 +7,7 @@
 }
 
 .movie-main-container {
+    position: relative;
     width: 100%;
     max-width: 1420px;
     min-height: 100vh;

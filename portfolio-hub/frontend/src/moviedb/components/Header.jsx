@@ -90,11 +90,6 @@ const Header = ({setSearchedMovies}) => {
 
   return (
     <div className='header-movie'>
-        <div className="back-button-movie"
-            onClick={() => nav('/')}
-        >
-            <p>X</p>
-        </div>
         <div className="movie-header-title">
             <h1 className='movie-white'>Find Your Next</h1>
             <h1 className='movie-red'>Favorite Movie</h1>

@@ -23,6 +23,11 @@ const MovieHome = ({
   return (
     <div className="body-container">
         <div className='movie-main-container' style={{backgroundImage: `url(${import.meta.env.BASE_URL}moviedb/movie_background.png)`}}>
+            <div className="back-button-movie"
+            onClick={() => nav('/')}
+        >
+            <p>X</p>
+        </div>
             <Header setSearchedMovies={setSearchedMovies}/>
             <Body 
                 searchedMovies={searchedMovies}

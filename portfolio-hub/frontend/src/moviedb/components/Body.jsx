@@ -34,7 +34,7 @@ const Body = ({
         break;
       case "rated":
         navigate("top-rated")
-        break;
+        break;          
       case "trend":
         navigate("trending")
         break;
@@ -58,6 +58,7 @@ const Body = ({
   return (
     <div className='movie-body-main-container'>
       <div className="inner-movie-bc">
+      
         {searched_movies !== null && (
           <>
             <div className="search-results-container">
@@ -149,7 +150,8 @@ const Body = ({
       </div>
 
       <div className="search-filters">
-        <SearchFilter />
+        <SearchFilter 
+/>
       </div>
     </div>
   )

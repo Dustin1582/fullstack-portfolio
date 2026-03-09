@@ -5,6 +5,7 @@
 }
 
 .main-page {
+    position: relative;
     height: 100%;
     max-width: 1420px;
 
@@ -39,7 +40,8 @@
 
 .back-button-movie {
     position: absolute;
-    right: 16rem;
+    top: 2rem;
+    right: 2rem;
     display: flex;
     justify-content: center;
     align-items: center;
